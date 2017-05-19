@@ -8,7 +8,7 @@ RUN yum -y install fontconfig libSM libICE libXrender libXext cups-libs libGLU c
 
 # copy java to /opt/ and extract it
 COPY files/tars/jdk-8u131-linux-x64.tar.gz-part-* /opt/
-RUN cat /opt/jdk-8u131-linux-x64.tar.gz.a* > /opt/jdk-8u131-linux-x64.tar.gz
+RUN cat /opt/jdk-8u131-linux-x64.tar.gz-part-* > /opt/jdk-8u131-linux-x64.tar.gz
 RUN tar -zxvf /opt/jdk-8u131-linux-x64.tar.gz -C /opt/
 RUN rm /opt/jdk-8u131-linux-x64.tar.gz*
 
@@ -21,7 +21,7 @@ ENV PATH	PATH:$PATH:/opt/jdk1.8.0_131/bin:/opt/jdk1.8.0_131/jre/bin
 
 # copy alfresco base installation
 COPY files/tars/alfresco-community.tar.gz-part-* /opt/
-RUN cat /opt/alfresco-community.tar.gz.a* > /opt/alfresco-community.tar.gz
+RUN cat /opt/alfresco-community.tar.gz-part-* > /opt/alfresco-community.tar.gz
 RUN tar -zxvf /opt/alfresco-community.tar.gz -C /opt/
 RUN rm /opt/alfresco-community.tar.gz*
 
